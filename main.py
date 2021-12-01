@@ -21,11 +21,18 @@ def draw_polygon(sides):
         timmy.left(angle)
 
 
-draw_polygon(3)
-draw_polygon(4)
-draw_polygon(5)
-draw_polygon(6)
-draw_polygon(7)
-draw_polygon(8)
+def random_walk(num_of_turns):
+    for num in range(num_of_turns):
+        choices = ['left', 'right']
+        choice = random.choice(choices)
+        angle = random.randint(0, 360)
+        distance = random.randint(0, 100)
+        timmy.forward(distance)
+        if choice == 'left':
+            timmy.left(angle)
+        if choice == 'right':
+            timmy.right(angle)
 
+
+random_walk(15)
 screen.exitonclick()
