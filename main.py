@@ -1,30 +1,31 @@
 from turtle import Turtle, Screen
+import random
 
 timmy = Turtle()
 timmy.shape("turtle")
 timmy.color('black')
 
-
-def dash_line(length):
-    for amount in range(length):
-        timmy.forward(5)
-        timmy.penup()
-        timmy.forward(5)
-        timmy.pendown()
-
-
-def draw_square():
-    dash_line(20)
-    timmy.left(90)
-    dash_line(20)
-    timmy.left(90)
-    dash_line(20)
-    timmy.left(90)
-    dash_line(20)
-    timmy.left(90)
-
-
-draw_square()
-
 screen = Screen()
+screen.colormode(255)
+
+
+def draw_polygon(sides):
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    timmy.pencolor(r, g, b)
+    angle = 360 / sides
+
+    for num in range(sides):
+        timmy.forward(100)
+        timmy.left(angle)
+
+
+draw_polygon(3)
+draw_polygon(4)
+draw_polygon(5)
+draw_polygon(6)
+draw_polygon(7)
+draw_polygon(8)
+
 screen.exitonclick()
