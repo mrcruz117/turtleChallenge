@@ -22,6 +22,7 @@ def draw_polygon(sides):
 
 
 def random_walk(num_of_turns):
+    timmy.speed(0)
     for num in range(num_of_turns):
         choices = ['left', 'right']
         choice = random.choice(choices)
@@ -34,5 +35,17 @@ def random_walk(num_of_turns):
             timmy.right(angle)
 
 
-random_walk(15)
+def spirograph():
+    timmy.speed(0)
+    for num in range(180):
+        r = random.randint(0, 255)
+        g = random.randint(0, 255)
+        b = random.randint(0, 255)
+        timmy.pencolor(r, g, b)
+        timmy.circle(100)
+        timmy.left(2)
+
+
+spirograph()
+#random_walk(100)
 screen.exitonclick()
